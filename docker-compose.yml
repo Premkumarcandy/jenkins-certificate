@@ -18,12 +18,12 @@ services:
   slave2:
     build: slaveA/
     ports:
-     - "8081:22"
+     - "8082:22"
     network_mode: bridge
 
   slave3:
     build: slaveA/
     ports:
-     - "8081:22"
+     - "8083:22"
     network_mode: bridge
 
