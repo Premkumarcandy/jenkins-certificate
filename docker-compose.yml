@@ -1,0 +1,29 @@
+version: '2'  
+services:  
+  jenkins_exam:
+    image: jenkins:2.19.4
+    ports:
+     - "8080:8080"
+     - "50000:50000"
+    volumes:
+     - /home/mishkin/Docker/new_jenkins/new_jenkins_volume:/var/jenkins_home
+    network_mode: bridge
+    
+  slave1:
+    build: slaveA/
+    ports:
+     - "8081:22"
+    network_mode: bridge
+
+  slave2:
+    build: slaveA/
+    ports:
+     - "8081:22"
+    network_mode: bridge
+
+  slave3:
+    build: slaveA/
+    ports:
+     - "8081:22"
+    network_mode: bridge
+
