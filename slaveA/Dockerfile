@@ -21,7 +21,7 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa &&\
 RUN useradd -m -d /home/jenkins -s /bin/bash jenkins &&\
     echo "jenkins:jenkins" | chpasswd
 
-# Configure SSH server
+# Configure SSH server (mind the need to create /var/run/sshd)
 RUN sed -ri 's/^session\s+required\s+pam_loginuid.so$/session optional pam_loginuid.so/' /etc/pam.d/sshd && \
     mkdir -p /var/run/sshd
 
